@@ -2589,8 +2589,6 @@ public final class Settings {
             MOVED_TO_SECURE.add(Secure.ADVANCED_REBOOT_IN_POWER_MENU);
             MOVED_TO_SECURE.add(Secure.SCREENSHOT_IN_POWER_MENU);
             MOVED_TO_SECURE.add(Secure.SCREENRECORD_IN_POWER_MENU);
-            MOVED_TO_SECURE.add(Secure.AMBIENT_VISUALIZER_ENABLED);
-            MOVED_TO_SECURE.add(Secure.LOCKSCREEN_VISUALIZER_ENABLED);
         }
 
         @UnsupportedAppUsage
@@ -4054,95 +4052,6 @@ public final class Settings {
          * @hide
          */
         public static final String SCREEN_OFF_ANIMATION = "screen_off_animation";
-
-        /**
-         * Pulse navbar music visualizer
-         *
-         * @hide
-         */
-        public static final String PULSE_ENABLED = "navbar_pulse_enabled";
-
-        /**
-         * Pulse navbar music visualizer color type
-         *
-         * @hide
-         */
-        public static final String PULSE_COLOR_TYPE = "navbar_pulse_color_type";
-
-        /**
-         * Pulse music visualizer user defined color
-         *
-         * @hide
-         */
-        public static final String PULSE_COLOR_USER = "navbar_pulse_color_user";
-
-        /**
-         * Pulse lavalamp animation speed
-         *
-         * @hide
-         */
-        public static final String PULSE_LAVALAMP_SPEED = "navbar_pulse_lavalamp_speed";
-
-        /**
-         * Pulse renderer implementation
-         *
-         * @hide
-         */
-        public static final String PULSE_RENDER_STYLE_URI = "navbar_pulse_render_style";
-
-        /**
-         * Custom Pulse Widths
-         * @hide
-         */
-        public static final String PULSE_CUSTOM_DIMEN = "pulse_custom_dimen";
-
-        /**
-         * Custom Spacing Between Pulse Bars
-         * @hide
-         */
-        public static final String PULSE_CUSTOM_DIV = "pulse_custom_div";
-
-        /**
-         * Custom Pulse Block Size
-         * @hide
-         */
-        public static final String PULSE_FILLED_BLOCK_SIZE = "pulse_filled_block_size";
-
-        /**
-         * Custom Spacing Between Pulse Blocks
-         * @hide
-         */
-        public static final String PULSE_EMPTY_BLOCK_SIZE = "pulse_empty_block_size";
-
-        /**
-         * Custom Pulse Sanity Levels
-         * @hide
-         */
-        public static final String PULSE_CUSTOM_FUDGE_FACTOR = "pulse_custom_fudge_factor";
-
-        /**
-         * Pulse Fudge Factor
-         * @hide
-         */
-        public static final String PULSE_SOLID_FUDGE_FACTOR = "pulse_solid_fudge_factor";
-
-        /**
-         * Pulse Solid units count
-         * @hide
-         */
-        public static final String PULSE_SOLID_UNITS_COUNT = "pulse_solid_units_count";
-
-        /**
-         * Pulse Solid units opacity
-         * @hide
-         */
-        public static final String PULSE_SOLID_UNITS_OPACITY = "pulse_solid_units_opacity";
-
-        /**
-         * Pulse uses FFT averaging
-         * @hide
-         */
-        public static final String PULSE_SMOOTHING_ENABLED = "pulse_smoothing_enabled";
 
         /**
          * Whether the setup wizard has been run before (on first boot), or if
@@ -10641,61 +10550,6 @@ public final class Settings {
                 "qstile_requires_unlocking";
 
         /**
-         * Whether to show the keyguard visualizer.
-         * Boolean setting. 0 = off, 1 = on.
-         * @hide
-         */
-        public static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer";
-        /** @hide */
-        private static final Validator LOCKSCREEN_VISUALIZER_ENABLED_VALIDATOR =
-                BOOLEAN_VALIDATOR;
-
-        /**
-         * Ambient Display Visualizer
-         * @hide
-         */
-        public static final String AMBIENT_VISUALIZER_ENABLED = "ambient_visualizer";
-        /** @hide */
-        private static final Validator AMBIENT_VISUALIZER_ENABLED_VALIDATOR =
-                BOOLEAN_VALIDATOR;
-
-        /**
-         * Lockscreen lavalamp psychedelic colors
-         * @hide
-         */
-        public static final String LOCKSCREEN_LAVALAMP_ENABLED = "lockscreen_lavalamp_enabled";
-
-        /**
-         * Lockscreen lavalamp animation speed
-         * @hide
-         */
-        public static final String LOCKSCREEN_LAVALAMP_SPEED = "lockscreen_lavalamp_speed";
-
-        /**
-         * Whether to use automatic color for visualizer
-         * @hide
-         */
-        public static final String LOCKSCREEN_VISUALIZER_AUTOCOLOR = "lockscreen_visualizer_autocolor";
-
-        /**
-         * Number of bars shown in visualizer
-         * @hide
-         */
-        public static final String LOCKSCREEN_SOLID_UNITS_COUNT = "lockscreen_solid_units_count";
-
-        /**
-         * Visualizer sanity level
-         * @hide
-         */
-        public static final String LOCKSCREEN_SOLID_FUDGE_FACTOR = "lockscreen_solid_fudge_factor";
-
-        /**
-         * Visualizer opacity
-         * @hide
-         */
-        public static final String LOCKSCREEN_SOLID_UNITS_OPACITY = "lockscreen_solid_units_opacity";
-
-        /**
          * Controls whether tap gesture is enabled.
          * @hide
          */
@@ -10751,6 +10605,109 @@ public final class Settings {
          * @hide
          */
         public static final String HARDWARE_KEYS_ENABLE = "hardware_keys_enable";
+
+        /**
+         * Pulse navbar music visualizer
+         *
+         * @hide
+         */
+        public static final String NAVBAR_PULSE_ENABLED = "navbar_pulse_enabled";
+
+        /**
+         * Pulse ambient music visualizer
+         * @hide
+         */
+        public static final String AMBIENT_PULSE_ENABLED = "ambient_pulse_enabled";
+        private static final Validator AMBIENT_PULSE_ENABLED_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
+         * Pulse lockscreen music visualizer
+         * @hide
+         */
+        public static final String LOCKSCREEN_PULSE_ENABLED = "lockscreen_pulse_enabled";
+
+        /**
+         * Pulse navbar music visualizer color type
+         *
+         * @hide
+         */
+        public static final String PULSE_COLOR_MODE = "pulse_color_mode";
+
+        /**
+         * Pulse music visualizer user defined color
+         *
+         * @hide
+         */
+        public static final String PULSE_COLOR_USER = "pulse_color_user";
+
+        /**
+         * Pulse lavalamp animation speed
+         *
+         * @hide
+         */
+        public static final String PULSE_LAVALAMP_SPEED = "pulse_lavalamp_speed";
+
+        /**
+         * Pulse renderer implementation
+         *
+         * @hide
+         */
+        public static final String PULSE_RENDER_STYLE = "pulse_render_style";
+
+        /**
+         * Custom Pulse Widths
+         * @hide
+         */
+        public static final String PULSE_CUSTOM_DIMEN = "pulse_custom_dimen";
+
+        /**
+         * Custom Spacing Between Pulse Bars
+         * @hide
+         */
+        public static final String PULSE_CUSTOM_DIV = "pulse_custom_div";
+
+        /**
+         * Custom Pulse Block Size
+         * @hide
+         */
+        public static final String PULSE_FILLED_BLOCK_SIZE = "pulse_filled_block_size";
+
+        /**
+         * Custom Spacing Between Pulse Blocks
+         * @hide
+         */
+        public static final String PULSE_EMPTY_BLOCK_SIZE = "pulse_empty_block_size";
+
+        /**
+         * Custom Pulse Sanity Levels
+         * @hide
+         */
+        public static final String PULSE_CUSTOM_FUDGE_FACTOR = "pulse_custom_fudge_factor";
+
+        /**
+         * Pulse Fudge Factor
+         * @hide
+         */
+        public static final String PULSE_SOLID_FUDGE_FACTOR = "pulse_solid_fudge_factor";
+
+        /**
+         * Pulse Solid units count
+         * @hide
+         */
+        public static final String PULSE_SOLID_UNITS_COUNT = "pulse_solid_units_count";
+
+        /**
+         * Pulse Solid units opacity
+         * @hide
+         */
+        public static final String PULSE_SOLID_UNITS_OPACITY = "pulse_solid_units_opacity";
+
+        /**
+         * Pulse uses FFT averaging
+         * @hide
+         */
+        public static final String PULSE_SMOOTHING_ENABLED = "pulse_smoothing_enabled";
 
         /**
          * This are the settings to be backed up.
@@ -10901,8 +10858,7 @@ public final class Settings {
             ADVANCED_REBOOT_IN_POWER_MENU,
             SCREENSHOT_IN_POWER_MENU,
             SCREENRECORD_IN_POWER_MENU,
-            AMBIENT_VISUALIZER_ENABLED,
-            LOCKSCREEN_VISUALIZER_ENABLED,
+            AMBIENT_PULSE_ENABLED,
         };
 
         /**
@@ -11118,8 +11074,7 @@ public final class Settings {
             VALIDATORS.put(ADVANCED_REBOOT_IN_POWER_MENU, ADVANCED_REBOOT_IN_POWER_MENU_VALIDATOR);
             VALIDATORS.put(SCREENSHOT_IN_POWER_MENU, SCREENSHOT_IN_POWER_MENU_VALIDATOR);
             VALIDATORS.put(SCREENRECORD_IN_POWER_MENU, SCREENRECORD_IN_POWER_MENU_VALIDATOR);
-            VALIDATORS.put(AMBIENT_VISUALIZER_ENABLED, AMBIENT_VISUALIZER_ENABLED_VALIDATOR);
-            VALIDATORS.put(LOCKSCREEN_VISUALIZER_ENABLED, LOCKSCREEN_VISUALIZER_ENABLED_VALIDATOR);
+            VALIDATORS.put(AMBIENT_PULSE_ENABLED, AMBIENT_PULSE_ENABLED_VALIDATOR);
         }
 
         /**
